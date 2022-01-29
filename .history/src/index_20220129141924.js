@@ -2,11 +2,11 @@
 
 module.exports = function towelSort(matrix) {
     const newArr = [];
-    if (!matrix) {
+    if (matrix.length <= 0) {
         return [];
     }
     const sort = matrix.map((item, index) =>
-        index % 2 == 1 ? newArr.push(item.reverse()) : newArr.push(item)
+        index != 0 && index % 2 == 0 ? newArr.push(item.reverse()) : item
     );
-    return newArr.flat();
+    return sort.flat();
 };
